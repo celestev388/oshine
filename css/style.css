@@ -1,21 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i|Nunito:300,400,600,800&display=swap');
+@font-face {
+    font-family: 'Roboto';
+    src: url(../fonts/Roboto-Regular.woff);
+    src: url(../fonts/Roboto-Regular.woff2);
+    src: url(../fonts/Roboto-Regular.eot);
+    src: url(../fonts/Roboto-Regular.ttf);
+}
 body{
-	font-family: Segoe, "Segoe UI";
+	font-family: 'Nunito', sans-serif;
 	font-size: 14px;
 	color: #808080;
 	
 	}
 header{
-	background-color: #000;
+	background-color: transparent;
 	padding: 20px 0;
+	position: absolute;
+	width: 100%;
+	z-index: 1000;
 }
 
 #home{
-	background-image: url("../img/hero-home.jpg");
 	background-size: cover;
-	background-position:top center;
+	background-position: center;
 	padding: 10% 0;
 	color: #FFFFFF;
-	
+	position: relative;
 }
 
 #home h1{
@@ -30,6 +40,24 @@ header{
 #home p{
 	font-size: 22;
 }
+
+#home .subtitulo{
+	color: #fff;
+}
+
+.bg-home{
+	background-image: url("../img/hero-home.jpg");
+	height: 100vh;
+}
+
+.bg-contact-us{
+	background-image: url("../img/hero-contact.jpeg");
+	background-position: top;
+	height: 60vh;
+}
+
+
+
 
 .btn-light{
 	border-radius: 0;
@@ -64,7 +92,7 @@ header{
 	font-size: 13px;
 	margin-bottom: 80px;	
 	text-transform: lowercase;
-	font-family: Baskerville, "Palatino Linotype";
+	font-family: 'Crimson Text', serif;
 	text-align: center;
 }
 
@@ -225,11 +253,117 @@ header{
 	background-color: rgba(0,0,0,0.55);
 }
 
+.work{
+	position: relative;
+	overflow: hidden;      <!--PARA OCULTAR IMAGEN-->
+}
+
+.work-fondo{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(40,209,162,0.75);
+	opacity: 0;
+	transition: all 0.4s ease-in;
+	z-index: 10;
+}
+
+.work-texto{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: #fff;
+	text-align: center;
+	opacity: 0;
+	transition: all 1s ease-in;
+	z-index: 20;
+}
+
+.work-texto h5{
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 2px;
+	font-size: 14px;
+}
+
+.work-texto h6{
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.work:hover .work-fondo,
+.work:hover .work-texto{
+	opacity: 1;
+}
+
+.work-frame{
+	position: absolute;
+	top: 0;
+	padding: 5px;
+	width: 100%;
+	height: 100%;
+}
+
+.work-bottom{
+	position: absolute;
+	width: 100%;
+	background-color: #000;
+	color: #fff;
+	bottom: 0;
+	text-align: center;
+	padding: 5px 0;
+}
+
+.work:hover .work-bottom{
+	background-color: #28D1A2;
+}
 
 
+.overlay{
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.40);
+	padding: 10% 0;
+}
 
+.work:hover img{
+	transform: scale(1.5);
+	transition: all 1s ease-in-out;
+	filter: blur(0px);
+}
 
+.work img{
+	transition:  all 1s ease-in-out;
+	filter: blur(5px);
+	filter: sepia(1);
+}
 
+h4{
+	text-transform: uppercase;
+	color: #404040;
+	font-size: 14px;
+	letter-spacing: 1px;
+	font-weight: 400;
+}
+
+.navbar-nav .fab{
+	background-color: #28D1A2;
+	border-radius: 100%;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+}
+
+.navbar-nav .fab:hover{
+	color: #000;
+}
 
 
 
